@@ -6,4 +6,5 @@ require "movies.php";
 /**@var array $movies*/
 
 $age=readline("Enter age: ");
-if (is_numeric($age)) getAvailableMovies($movies, (int)$age);
+if (is_numeric($age)) getAvailableMovies($movies, floor((float)$age));
+else echo "[ERROR]: Age must be numeric!";
