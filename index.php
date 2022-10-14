@@ -1,16 +1,9 @@
 <?php
+declare(strict_types=1);
 
-$a = 4;
-$b = 60;
+require "funcions.php";
+require "movies.php";
+/**@var array $movies*/
 
-$c = test($a, $b);
-echo $c;
-
-function test($a, $b)
-{
-    $c = $a + $b;
-
-    return $c;
-}
-
-
+$age=readline("Enter age: ");
+if (is_numeric($age)) getAvailableMovies($movies, (int)$age);
