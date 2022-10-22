@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS movie_title
 );
 
 INSERT INTO movie_title (LANGUAGE_ID, TITLE, MOVIE_ID)
-SELECT language.ID, TITLE, movie.ID FROM movie, language
-WHERE language.NAME='русский';
+SELECT 'ru', TITLE, ID FROM movie;
+
 
 ALTER TABLE movie DROP TITLE;
