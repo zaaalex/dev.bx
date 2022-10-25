@@ -1,0 +1,44 @@
+.container{
+	display: flex;
+	flex-direction: row;
+}
+
+.sidebar{
+	display: flex;
+
+	position: absolute;
+	width: 24%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+
+	background: #383838;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.header{
+	position: absolute;
+	width: 76%;
+	height: 6%;
+	left: 24%;
+	top: 0px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.content {
+	position: absolute;
+	width: 76%;
+	height: 94%;
+	left: 24%;
+	top: 6%;
+
+	background: #CCCCCC;
+}
