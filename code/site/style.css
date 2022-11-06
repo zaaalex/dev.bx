@@ -160,6 +160,39 @@
 	border-radius: 20px;
 }
 
+.film-overlay{
+	display: none;
+	position: absolute;
+	width: 370px;
+	height: 700px;
+
+	border-radius: 20px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.content-item:hover .film-overlay{
+	display: block;
+}
+
+.film-overlay a{
+	display: flex;
+	width: 221px;
+	height: 56px;
+	margin-top: 300px;
+	margin-left: 80px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	text-decoration: none;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color:  #FFFFFF;
+
+	background: #4EE7B0;
+	border-radius: 7px;
+}
+
 .content-item img{
 	display: flex;
 	width: 370px;
