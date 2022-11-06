@@ -124,23 +124,3 @@ FROM
 WHERE calculate_count.count=seach_max.max
           && calculate_count.NAME=seach_max.NAME
 ORDER BY calculate_count.NAME;
-
-
-
-
-
-
-
-
-
-
-
-
-SELECT additional.NAME, max(additional.count) as max
-FROM (
-SELECT a.NAME,count(mg.GENRE_ID) as count FROM actor a
-INNER JOIN movie_actor ma on ma.ACTOR_ID=a.ID
-INNER JOIN movie_genre mg ON mg.MOVIE_ID=ma.MOVIE_ID
-INNER JOIN genre g on mg.GENRE_ID = g.ID
-GROUP BY a.NAME, mg.GENRE_ID) as additional
-GROUP BY additional.NAME
