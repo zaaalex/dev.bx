@@ -1,35 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*all on page - container*/
+
 .container{
 	display: flex;
 	flex-direction: row;
 }
 
+/*sidebar*/
 .sidebar{
-	display: block;
-	width: 400px;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
-	left: 0px;
-	top: 0px;
-
+	width: 400px;
 	background: #383838;
 }
 
+.logo{
+	display: flex;
+	width: 211px;
+	height: 68px;
+	background: url("../image/logo.png");
+
+	margin-left: 90px;
+	margin-top: 60px;
+	margin-bottom: 80px;
+}
+
+/*menu*/
+.menu{
+	display: flex;
+	flex-direction: column;
+	margin: 30px;
+}
+
+.menu-item {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 2px solid rgba(242, 242, 242, 0.1);
+}
+
+.menu-item a{
+	color: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+
+	padding: 15px;
+}
+
+.menu-item a:hover {
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-item:last-child {
+	border-bottom:none;
+}
+
+/*center part*/
 .wrapper{
 	display: flex;
 	flex-direction: column;
 	flex:1;
 }
 
-
-
 .header{
-	display: block;
-	width: 76%;
-	height: 6%;
-	left: 24%;
-	top: 0px;
+	display: flex;
+	flex-direction: row;
+	height: 88px;
 
 	background: #FFFFFF;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-film {
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+	margin-top: 27px;
+	margin-left: 43px;
+}
+
+.icon-and-search{
+	display: flex;
+	flex-direction: row;
+	margin-right: 15px;
+	width: 450px;
+	border-bottom: 1px solid #C4C4C4;
+}
+
+.icon-and-search input{
+	border: none;
+}
+
+.search{
+	display: flex;
+	margin: 10px;
+	width: 18px;
+	height: 18px;
+	background: url("../image/search-new.png");
+}
+
+.search-film form {
+	display: flex;
+	margin-left: 15px;
+	color: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+}
+
+.add-film{
+	display: flex;
+}
+
+
+
+.search-film button {
+	color: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+
+	width: 89px;
+	background: #E7A04E;
+	border-radius: 7px;
+	border: none;
+}
+
+.add-film button {
+	color: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+
+	margin-top: 26px;
+	margin-left: 134px;
+	height: 40px;
+	width: 158px;
+	background: #4EE7B0;
+	border-radius: 7px;
+	border: none;
 }
 
 .content {
