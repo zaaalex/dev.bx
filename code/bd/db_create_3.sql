@@ -66,3 +66,25 @@ CREATE TABLE movie_actor
         ON UPDATE RESTRICT
         ON DELETE RESTRICT
 );
+
+CREATE TABLE genre
+(
+    ID int not null auto_increment,
+    NAME varchar(500) not null,
+    PRIMARY KEY (ID)
+);
+
+CREATE TABLE movie_genre
+(
+    MOVIE_ID int not null,
+    GENRE_ID int not null,
+    PRIMARY KEY (MOVIE_ID, GENRE_ID),
+    FOREIGN KEY FK_MG_MOVIE (MOVIE_ID)
+        REFERENCES movie(ID)
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT,
+    FOREIGN KEY FK_MG_GENRE (GENRE_ID)
+        REFERENCES genre(ID)
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT
+);
