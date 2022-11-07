@@ -1,11 +1,18 @@
+<?php
+/**
+* @var string $content
+*/
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Главная страница</title>
-	<link rel="stylesheet" href = "reset.css">
-	<link rel="stylesheet" href = "style.css">
+	<link rel="stylesheet" href = "../views/reset.css">
+	<link rel="stylesheet" href = "../views/style.css">
+	<link rel="stylesheet" href = "../views/film.css">
 </head>
 <body>
 
@@ -13,7 +20,10 @@
 
 	<div class="sidebar">
 
-		<div class="logo"></div>
+		<div class="logo">
+			<?php //@todo add href?>
+			<a href=""></a>
+		</div>
 		<ul class="menu">
 			<li class="menu-item">
 				<a href="" >ГЛАВНАЯ</a>
@@ -53,27 +63,7 @@
 			</form>
 
 		</div>
-
-		<div class="content">
-			<div class="content-item">
-				<div class="film-overlay">
-					<a href="">ПОДРОБНЕЕ</a>
-				</div>
-				<img src="../data/film_image/1.jpg">
-				<div class="film-title">TITLE</div>
-				<div class="film-original-title">ORIGINAL TITLE</div>
-				<div class="film-border"></div>
-				<div class="film-description">ORIGINAL TITLE</div>
-
-				<div class="film-time-container">
-					<div class="container-time">
-					<div class="time-image"></div>
-					<div class="time">time/ege</div>
-					</div>
-					<div class="genre">time ege</div>
-				</div>
-			</div>
-		</div>
+		<?= $content?>
 	</div>
 
 </div>
