@@ -15,7 +15,21 @@
 		<div class="movie-footer">
 			<img src="../../data/film_image/1.jpg">
 			<div class="movie-info">
-				<div class="rating-bar">7.2</div>
+				<div class="rating-bar">
+					<ul class="boxes">
+						<li class="box box-1"></li>
+						<li class="box box-2"></li>
+						<li class="box box-3"></li>
+						<li class="box box-4"></li>
+						<li class="box box-5"></li>
+						<li class="box box-6"></li>
+						<li class="box box-7"></li>
+						<li class="box box-8"></li>
+						<li class="box box-9"></li>
+						<li class="box box-10"></li>
+					</ul>
+					<div class="ellipse-rating">7.5</div>
+				</div>
 				<div class="info-text">О фильме</div>
 				<div class="movie-year">
 					<div class="block1-text">Год производства:</div>

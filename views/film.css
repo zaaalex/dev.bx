@@ -86,9 +86,72 @@
 }
 
 .rating-bar{
-	margin: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.boxes{
+	display: flex;
+	flex-direction: row;
+}
+
+.box{
+	display: flex;
 	background: #E78818;
 	border: 5px solid #FFFFFF;
+	box-sizing: border-box;
+	height: 27px;
+	width: 27px;
+}
+
+.box:hover{
+	cursor: pointer;
+}
+
+.box:hover+.box,
+.box:hover+.box+.box,
+.box:hover+.box+.box,
+.box:hover+.box+.box+.box,
+.box:hover+.box+.box+.box+.box,
+.box:hover+.box+.box+.box+.box+.box,
+.box:hover+.box+.box+.box+.box+.box+.box,
+.box:hover+.box+.box+.box+.box+.box+.box+.box,
+.box:hover+.box+.box+.box+.box+.box+.box+.box+.box,
+.box:hover+.box+.box+.box+.box+.box+.box+.box+.box+.box
+{
+	background: #F2F2F2;
+	cursor: pointer;
+}
+
+.box:active+.box,
+.box:active+.box+.box,
+.box:active+.box+.box,
+.box:active+.box+.box+.box,
+.box:active+.box+.box+.box+.box,
+.box:active+.box+.box+.box+.box+.box,
+.box:active+.box+.box+.box+.box+.box+.box,
+.box:active+.box+.box+.box+.box+.box+.box+.box,
+.box:active+.box+.box+.box+.box+.box+.box+.box+.box,
+.box:active+.box+.box+.box+.box+.box+.box+.box+.box+.box
+{
+	background: #F2F2F2;
+	cursor: pointer;
+}
+
+.ellipse-rating{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-radius: 50px;
+	width: 55px;
+	height: 55px;
+	background: #E78818;
+	margin-left: 12px;
+
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	color: #FFFFFF;
 }
 
 .info-text{
