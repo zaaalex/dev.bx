@@ -1,7 +1,10 @@
 <?php
 /**
-* @var string $content
-*/
+ * @var string $content
+ * @var string $title
+ * @var string $PathToROOT
+ * @var array $genres
+ */
 ?>
 
 <!doctype html>
@@ -9,36 +12,36 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Главная страница</title>
-	<link rel="stylesheet" href = "../views/reset.css">
-	<link rel="stylesheet" href = "../views/style.css">
-	<link rel="stylesheet" href = "../views/film.css">
+	<title><?= $title?></title>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/reset.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/style.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/index.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/film.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/addFilm.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/favorite.css>
+	<link rel="stylesheet" href = <?=$PathToROOT?>/views/css/error.css>
 </head>
 <body>
 
 <div class="container">
 
 	<div class="sidebar">
-
-		<div class="logo">
-			<?php //@todo add href?>
-			<a href=""></a>
-		</div>
+		<a href="http://dev.bx/services/pages/index.php?genre=Главная" class="logo">
+			<img src="<?=$PathToROOT?>/data/image/logo.png" alt="">
+		</a>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="" >ГЛАВНАЯ</a>
+				<a href="http://dev.bx/services/pages/index.php?genre=Главная" >ГЛАВНАЯ</a>
 			</li>
+
+			<?php foreach ($genres as $genre):?>
+				<li class="menu-item">
+					<a href="http://dev.bx/services/pages/index.php?genre=<?=$genre?>"><?=$genre?></a>
+				</li>
+			<?php endforeach;?>
+
 			<li class="menu-item">
-				<a href="">ТРИЛЛЕР</a>
-			</li>
-			<li class="menu-item">
-				<a href="">КОМЕДИЯ</a>
-			</li>
-			<li class="menu-item">
-				<a href="">ФАНТАСТИКА</a>
-			</li>
-			<li class="menu-item">
-				<a href="">ИЗБРАННОЕ</a>
+				<a href="http://dev.bx/services/pages/favorite.php">ИЗБРАННОЕ</a>
 			</li>
 		</ul>
 	</div>
@@ -47,8 +50,6 @@
 		<div class="header">
 
 			<div class="search-film">
-
-
 				<form action="">
 					<div class="icon-and-search">
 						<div class="search"></div>
@@ -58,7 +59,7 @@
 				</form>
 			</div>
 
-			<form action="" class="add-film">
+			<form action="http://dev.bx/services/pages/addFilm.php" class="add-film">
 				<button type="submit" type="button">ДОБАВИТЬ ФИЛЬМ</button>
 			</form>
 

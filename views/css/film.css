@@ -32,7 +32,7 @@
 	display: flex;
 	width: 42px;
 	height: 35px;
-	background: url("../data/image/heart.png");
+	background: url("../../data/image/heart.png");
 }
 
 .title-age{
