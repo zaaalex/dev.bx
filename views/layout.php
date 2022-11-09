@@ -50,17 +50,17 @@
 		<div class="header">
 
 			<div class="search-film">
-				<form action="">
+				<form action="http://dev.bx/services/pages/index.php" method="post">
 					<div class="icon-and-search">
 						<div class="search"></div>
-						<input type=text name="name" placeholder="Поиск по каталогу..">
+						<input type=text name="search" placeholder="Поиск по каталогу..">
 					</div>
-					<button type="submit" type="button">ИСКАТЬ</button>
+					<button type="submit">ИСКАТЬ</button>
 				</form>
 			</div>
 
 			<form action="http://dev.bx/services/pages/addFilm.php" class="add-film">
-				<button type="submit" type="button">ДОБАВИТЬ ФИЛЬМ</button>
+				<button type="submit">ДОБАВИТЬ ФИЛЬМ</button>
 			</form>
 
 		</div>

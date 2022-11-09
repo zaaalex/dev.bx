@@ -149,9 +149,14 @@
 	background: #E78818;
 	margin-left: 12px;
 
+	cursor: pointer;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 22px;
 	color: #FFFFFF;
+}
+
+.ellipse-rating:hover{
+	cursor: initial;
 }
 
 .info-text{

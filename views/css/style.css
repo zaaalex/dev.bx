@@ -92,6 +92,8 @@
 
 .icon-and-search input{
 	border: none;
+	outline:none;
+	width: 410px;
 }
 
 .search{

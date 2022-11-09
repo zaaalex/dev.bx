@@ -2,14 +2,13 @@
 
 /*
  * Проверяет, присутствует ли $genre в массиве $movieGenre.
- * От использования стандарной функции PHP пришлось отказаться ввиду специфичности данных -
+ * От использования стандартной функции PHP пришлось отказаться ввиду специфичности данных -
  * названия жанров в данных о фильме начинаются с большой буквы
  */
 function genreMatch (array $movieGenre, string $genre):bool
 {
 	foreach ($movieGenre as $genreM){
-		if (mb_convert_case($genre, MB_CASE_LOWER, "UTF-8")===
-			mb_convert_case($genreM, MB_CASE_LOWER, "UTF-8"))
+		if (convertToLowerCase($genre)===convertToLowerCase($genreM))
 		{
 			return true;
 		}
@@ -29,7 +28,7 @@ function formatTimeInHourMinute(int $minute): string{
 
 	$str=(string)($minute)."мин. /".(string)(intdiv($minute, 60)).":";
 
-	//для исключение ситуации, когда после ":" окажется одна цифра. Пример: 2:1 - фильм длится 2ч 1мин
+	//Для исключения ситуации, когда после ":" окажется одна цифра. Пример: 2:1 - фильм длится 2ч 1мин
 	if ($minute%60<10)
 	{
 		$str.= '0';
@@ -61,8 +60,7 @@ function createImagePathByFilmId(int $id):string{
 
 /*
  * [EXTENSION] МОЖЕТ ВОЗВРАЩАТЬ NULL
- * Проверяет, есть ли фильм с id=$id в массиве фильмов $movies - возвращает такой элемент при совпадении,
- * либо NULL при отсутствии.
+ * Возвращает фильм с искомым id, либо null, если такого не оказалось
  */
 function getFilmById (array $movies, int $id): ?array
 {
@@ -74,4 +72,69 @@ function getFilmById (array $movies, int $id): ?array
 		}
 	}
 	return NULL;
+}
+
+/*
+ * [EXTENSION] МОЖЕТ ВОЗВРАЩАТЬ NULL
+ * Возвращает массив фильмов, жанр которых совпадает с $genre
+ */
+function getFilmsByGenre(array $movies, string $genre): ?array
+{
+	$chooseMovies=[];
+	if ($_GET['genre']==="Главная")
+	{
+		$chooseMovies=$movies;
+	}
+	else
+	{
+		foreach ($movies as $movie)
+		{
+			if (genreMatch($movie['genres'],  $genre))
+			{
+				$chooseMovies[]=$movie;
+			}
+		}
+	}
+	return $chooseMovies;
+}
+
+/*
+ * [EXTENSION] МОЖЕТ ВОЗВРАЩАТЬ NULL
+ * Возвращает массив фильмов, в названии которых присутствует поисковый запрос $name
+ */
+function getFilmsByName(array $movies, string $name): ?array
+{
+	$chooseMovies=[];
+	foreach ($movies as $movie)
+	{
+		/*
+		 * При попытке заменить на функцию str_contains() -
+		 *
+		 * Fatal error: Uncaught Error: Call to undefined function str_contains()
+		 * in C:\OSPanel\domains\dev.bx\services\command.php:111
+		 * Stack trace:
+		 * #0 C:\OSPanel\domains\dev.bx\services\pages\index.php(24): getFilmsByName()
+		 * #1 {main} thrown in C:\OSPanel\domains\dev.bx\services\command.php on line 111
+		 */
+		if (
+			/*
+			 * !==false здесь ввиду того, что в случае совпадения $name с названием фильма
+			* с первого символа strpos выдаст 0 в качестве ответа и условие if не сработает
+			*/
+			strpos(convertToLowerCase($movie['title']), convertToLowerCase($name))!==false ||
+			strpos(convertToLowerCase($movie['original-title']), convertToLowerCase($name))!==false
+			)
+		{
+			$chooseMovies[]=$movie;
+		}
+	}
+	return $chooseMovies;
+}
+
+/*
+ * Переводит строчку в LowerCase. Корректно работает со строчками на русском языке
+ */
+function convertToLowerCase(string $str): string
+{
+	return mb_convert_case($str, MB_CASE_LOWER, "UTF-8");
 }

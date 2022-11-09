@@ -6,26 +6,29 @@ require_once __DIR__ . '/../../boot.php';
  * @var array $genres;
  */
 
-if(!preg_match('/^[A-Za-zА-Яа-я]+$/u', $_GET['genre']))
+
+if(!preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_POST['search']) &&
+	!preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_GET['genre']))
 {
 	header("Location: http://dev.bx/services/pages/error.php");
 	return new InvalidArgumentException("Invalid genre!");
 }
 
 $chooseMovies=[];
-if ($_GET['genre']==="Главная")
+if (!empty($_POST['search']))
 {
-	$chooseMovies=$movies;
+	$chooseMovies=getFilmsByName($movies, $_POST['search']);
 }
 else
 {
-	foreach ($movies as $movie)
-	{
-		if (genreMatch($movie['genres'],  $_GET['genre']))
-		{
-			$chooseMovies[]=$movie;
-		}
-	}
+
+	$chooseMovies=getFilmsByGenre($movies, $_GET['genre']);
+}
+
+if (empty($chooseMovies))
+{
+	header("Location: http://dev.bx/services/pages/error.php");
+	return new InvalidArgumentException("Invalid genre!");
 }
 
 echo view ('layout',[
