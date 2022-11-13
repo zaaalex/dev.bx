@@ -8,6 +8,5 @@ require_once __DIR__ . '/../../boot.php';
 echo view ('layout',[
 	'content' => view('pages/favorite'),
 	'title'=>"Избранное",
-	'PathToROOT'=>"../../",
 	'genres'=>$genres
 ]);

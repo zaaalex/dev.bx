@@ -22,7 +22,7 @@ function genreMatch (array $movieGenre, string $genre):bool
 function formatTimeInHourMinute(int $minute): string{
 	if ($minute<0)
 	{
-		header("Location: http://dev.bx/services/pages/error.php");
+		header("Location: /services/pages/error.php");
 		throw new RuntimeException("Invalid time! Minute must be>=0");
 	}
 

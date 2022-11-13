@@ -27,7 +27,7 @@ else
 
 if (empty($chooseMovies))
 {
-	header("Location: http://dev.bx/services/pages/error.php");
+	header("Location: /services/pages/error.php");
 	return new InvalidArgumentException("Invalid genre!");
 }
 
@@ -36,6 +36,5 @@ echo view ('layout',[
 		'movies'=>$chooseMovies,
 	]),
 	'title'=>$_GET['genre'],
-	'PathToROOT'=>"../../",
 	'genres'=>$genres
 ]);

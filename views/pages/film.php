@@ -1,7 +1,6 @@
 <?php
 /**
  * @var array $movie
- * @var string $PathToROOT
  */
 ?>
 

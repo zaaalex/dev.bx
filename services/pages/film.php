@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../boot.php';
 
 if(!preg_match('/^\d+$/', $_GET['id'])||getFilmById($movies, (int)$_GET['id'])===NULL)
 {
-	header("Location: http://dev.bx/services/pages/error.php");
+	header("Location: /services/pages/error.php");
 	return new InvalidArgumentException("Invalid film id!");
 }
 
@@ -19,6 +19,5 @@ echo view ('layout',[
 		'movie'=> $movie
 	]),
 	'title'=>$movie['title'],
-	'PathToROOT'=>"../../",
 	'genres'=>$genres
 ]);
