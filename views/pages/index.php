@@ -11,7 +11,7 @@
 			<a href="http://dev.bx/services/pages/film.php?id=<?=$movie['id']?>">ПОДРОБНЕЕ</a>
 		</div>
 		<img src="<?=createImagePathByFilmId($movie['id']) ?>">
-		<div class="film-title"><?=$movie['title']?></div>
+		<div class="film-title"><?=decreaseDescription($movie['title'],38)." (".$movie['release-date'].")"?></div>
 		<div class="film-original-title"><?=$movie['original-title']?></div>
 		<div class="film-border"></div>
 		<div class="film-description"><?=decreaseDescription($movie['description']) ?></div>

@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 .movie {
-	flex: 1;
-	margin: 20px;
+	min-height: 985px;
+	margin: 47px;
 	background: #FFFFFF;
+}
+
+@media all and (max-width: 1366px) {
+	.movie {
+		min-height: 780px;
+		margin: 20px;
+	}
 }
 
 .movie-header{
@@ -24,25 +31,41 @@
 .movie-title{
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	font-size: 48px;
 	color:  #333333;
 }
 
 .heart{
 	display: flex;
+
+	cursor: pointer;
+	border: none;
 	width: 42px;
 	height: 35px;
-	background: url("../../data/image/heart.png");
+	background: url("/data/image/heart.png");
+}
+
+.heart-active{
+	display: flex;
+
+	cursor: pointer;
+	border: none;
+	width: 42px;
+	height: 35px;
+	background: url("/data/image/heart-active.png");
 }
 
 .title-age{
 	display: flex;
+	align-items: center;
 	flex-direction: row;
 	margin-top: 15px;
 }
 
 .movie-original {
 	display: flex;
+	font-weight: 600;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #999999;
@@ -50,6 +73,7 @@
 
 .movie-age{
 	display: flex;
+	font-weight: 600;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #CCCCCC;
@@ -58,10 +82,14 @@
 	border: 2px solid #CCCCCC;
 	border-radius: 7px;
 	margin-left: 18px;
+	justify-content: center;
+	align-items: center;
+
+	width: 39px;
+	height: 32px;
 }
 .movie-header-border{
 	margin-top: 15px;
-	margin-bottom: 15px;
 	border-bottom: 1px solid #CCCCCC;
 }
 
@@ -69,13 +97,21 @@
 	display: flex;
 	flex-direction: row;
 	margin-left: 44px;
+	margin-top: 32px;
 }
 
 .movie-footer img{
 	display: flex;
-	width: 300px;
-	height: 550px;
+	width: 469px;
+	height: 730px;
 	object-fit: cover;
+}
+
+@media all and (max-width: 1366px) {
+	.movie-footer img{
+		width: 300px;
+		height: 550px;
+	}
 }
 
 .movie-info{
@@ -96,6 +132,20 @@
 	flex-direction: row;
 }
 
+.box-choose+.box,
+.box-choose+.box+.box,
+.box-choose+.box+.box,
+.box-choose+.box+.box+.box,
+.box-choose+.box+.box+.box+.box,
+.box-choose+.box+.box+.box+.box+.box,
+.box-choose+.box+.box+.box+.box+.box+.box,
+.box-choose+.box+.box+.box+.box+.box+.box+.box,
+.box-choose+.box+.box+.box+.box+.box+.box+.box+.box,
+.box-choose+.box+.box+.box+.box+.box+.box+.box+.box+.box
+{
+	background: #F2F2F2;
+}
+
 .box{
 	display: flex;
 	background: #E78818;
@@ -106,6 +156,7 @@
 }
 
 .box:hover{
+	background: #E78818 !important;
 	cursor: pointer;
 }
 
@@ -120,23 +171,7 @@
 .box:hover+.box+.box+.box+.box+.box+.box+.box+.box,
 .box:hover+.box+.box+.box+.box+.box+.box+.box+.box+.box
 {
-	background: #F2F2F2;
-	cursor: pointer;
-}
-
-.box:active+.box,
-.box:active+.box+.box,
-.box:active+.box+.box,
-.box:active+.box+.box+.box,
-.box:active+.box+.box+.box+.box,
-.box:active+.box+.box+.box+.box+.box,
-.box:active+.box+.box+.box+.box+.box+.box,
-.box:active+.box+.box+.box+.box+.box+.box+.box,
-.box:active+.box+.box+.box+.box+.box+.box+.box+.box,
-.box:active+.box+.box+.box+.box+.box+.box+.box+.box+.box
-{
-	background: #F2F2F2;
-	cursor: pointer;
+	background: #F2F2F2  !important;
 }
 
 .ellipse-rating{
@@ -149,26 +184,27 @@
 	background: #E78818;
 	margin-left: 12px;
 
-	cursor: pointer;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	font-size: 22px;
 	color: #FFFFFF;
 }
 
 .ellipse-rating:hover{
-	cursor: initial;
+	cursor: default;
 }
 
 .info-text{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
+	font-weight: 700;
 	color: #333333;
-	margin-top: 5px;
-	margin-bottom: 15px;
+	margin-bottom: 22px;
 }
 
 .movie-year{
 	display: flex;
+	align-items: flex-start;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 15px;
@@ -176,6 +212,7 @@
 
 .director{
 	display: flex;
+	align-items: flex-start;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 15px;
@@ -183,6 +220,7 @@
 
 .actor{
 	display: flex;
+	align-items: flex-start;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 15px;
@@ -191,6 +229,7 @@
 .block1-text{
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	font-size: 16px;
 	color:  #666666;
 }
@@ -198,6 +237,8 @@
 .block2-text{
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	font-weight: 400;
 	font-size: 16px;
 	color: #000000;
 	width: 300px;
@@ -206,6 +247,8 @@
 .block3-text{
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
+	line-height: 28px;
+	font-weight: 400;
 	font-size: 16px;
 	color: #000000;
 }

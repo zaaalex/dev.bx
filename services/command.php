@@ -38,13 +38,13 @@ function formatTimeInHourMinute(int $minute): string{
 }
 
 /*
- * Урезает описание фильма до необходимой длины (по умолчанию 230). Учитывает тот факт, чтобы при обрезке описание
+ * Урезает описание фильма до необходимой длины (по умолчанию 500). Учитывает тот факт, чтобы при обрезке описание
  * не обрывалось на середине слова - при такой ситуации слово будет вырезано полностью.
  */
-function decreaseDescription(string $description, int $len=230): string{
+function decreaseDescription(string $description, int $len=500): string{
 	if (strlen($description)>$len)
 	{
-		$pos=strrpos(mb_strcut($description, 0, 440), " ", 0);
+		$pos=strrpos(mb_strcut($description, 0, $len), " ", 0);
 		$description=mb_strcut($description, 0, $pos)."..";
 	}
 	return $description;

@@ -37,7 +37,7 @@
 				<li class="menu-item">
 					<a href="/services/pages/index.php?genre=<?=$genre?>"><?=$genre?></a>
 				</li>
-			<?php endforeach;?>
+			<?php endforeach?>
 
 			<li class="menu-item">
 				<a href="/services/pages/favorite.php">ИЗБРАННОЕ</a>

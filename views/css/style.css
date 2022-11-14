@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 /*all on page - container*/
 
@@ -11,16 +11,17 @@
 .sidebar{
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
+	height: 100vh;
 	min-width: 400px;
 	background: #383838;
+
+	position: fixed;
 }
 
 .logo{
 	display: flex;
 	width: 211px;
 	height: 68px;
-
 
 	margin-left: 90px;
 	margin-top: 60px;
@@ -32,6 +33,9 @@
 	display: flex;
 	flex-direction: column;
 	margin: 30px;
+
+	overflow: auto;
+	scroll-behavior: smooth;
 }
 
 .menu-item {
@@ -43,6 +47,7 @@
 .menu-item a{
 	color: #B7B7B7;
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
 	font-size: 18px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -62,6 +67,8 @@
 .wrapper{
 	display: flex;
 	flex-direction: column;
+
+	margin-left: 400px;
 	flex:1;
 }
 
@@ -86,7 +93,7 @@
 	display: flex;
 	flex-direction: row;
 	margin-right: 15px;
-	width: 450px;
+
 	border-bottom: 1px solid #C4C4C4;
 }
 
@@ -96,12 +103,18 @@
 	width: 410px;
 }
 
+@media all and (max-width: 1366px) {
+	.icon-and-search input{
+		width: 410px;
+	}
+}
+
 .search{
 	display: flex;
 	margin: 10px;
 	width: 18px;
 	height: 18px;
-	background: url("../../data/image/search-new.png");
+	background: url("/data/image/search-new.png");
 }
 
 .search-film form {
@@ -110,6 +123,7 @@
 	color: #FFFFFF;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
+	font-weight: 400;
 }
 
 .add-film{
@@ -120,6 +134,7 @@
 	color: #FFFFFF;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
+	font-weight: 700;
 
 	width: 89px;
 	background: #E7A04E;
@@ -127,10 +142,17 @@
 	border: none;
 }
 
+.search-film button:hover{
+	cursor: pointer;
+	background: #d99548;
+}
+
+
 .add-film button {
 	color: #FFFFFF;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
+	font-weight: 700;
 
 	margin-top: 26px;
 	margin-left: 134px;
@@ -141,7 +163,19 @@
 	border: none;
 }
 
+.add-film button:hover{
+	cursor: pointer;
+	background: #42be95;
+}
+
+@media all and (max-width: 1366px) {
+	.add-film button {
+		margin-left: 134px;
+	}
+}
+
 .content {
+	min-height: 100vh;
 	margin-top: 4px;
 	display: flex;
 	flex: 1;
