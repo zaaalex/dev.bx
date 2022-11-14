@@ -30,7 +30,7 @@
 		</a>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="/services/pages/index.php?genre=Главная">ГЛАВНАЯ</a>
+				<a href="/services/pages/index.php?genre=Главная"><?=option("HOME_PAGE") ?></a>
 			</li>
 
 			<?php foreach ($genres as $genre): ?>
@@ -40,7 +40,7 @@
 			<?php endforeach ?>
 
 			<li class="menu-item">
-				<a href="/services/pages/favorite.php">ИЗБРАННОЕ</a>
+				<a href="/services/pages/favorite.php"><?=option("FAVORITES_PAGE") ?></a>
 			</li>
 		</ul>
 	</div>
@@ -54,12 +54,12 @@
 						<div class="search"></div>
 						<input type=text name="search" placeholder="Поиск по каталогу..">
 					</div>
-					<button type="submit">ИСКАТЬ</button>
+					<button type="submit"><?=option("SEARCH") ?></button>
 				</form>
 			</div>
 
 			<form action="/services/pages/addFilm.php" class="add-film">
-				<button type="submit">ДОБАВИТЬ ФИЛЬМ</button>
+				<button type="submit"><?=option("ADD_FILM") ?></button>
 			</form>
 
 		</div>

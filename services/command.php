@@ -153,3 +153,26 @@ function getFilmTitleWithYear($movie, $lengthTitle = 38): string
 		. $movie['release-date']
 		. ")";
 }
+
+/*
+ * Взаимодействие с файлом конфигурации - config.php
+ */
+function option(string $name, string $defaultValue = null)
+{
+	/**
+	 * @var array $config ;
+	 */
+	require "config.php";
+
+	if (array_key_exists($name, $config))
+	{
+		return $config[$name];
+	}
+
+	if ($defaultValue !== null)
+	{
+		return $defaultValue;
+	}
+
+	throw new \RuntimeException("Configuration option $name not found!");
+}
