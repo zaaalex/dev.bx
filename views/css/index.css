@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-.content-item{
+.content-item {
 	display: flex;
 	flex-direction: column;
 	width: 370px;
 	height: 700px;
 
 	margin: 20px;
-	background: #FFFFFF;
+	background: #fff;
 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 }
 
-.film-overlay{
+.film-overlay {
 	display: none;
 	position: absolute;
 	width: 370px;
@@ -22,11 +22,11 @@
 	background: rgba(0, 0, 0, 0.1);
 }
 
-.content-item:hover .film-overlay{
+.content-item:hover .film-overlay {
 	display: block;
 }
 
-.film-overlay a{
+.film-overlay a {
 	display: flex;
 	width: 221px;
 	height: 56px;
@@ -40,13 +40,13 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
-	color:  #FFFFFF;
+	color: #fff;
 
-	background: #4EE7B0;
+	background: #4ee7b0;
 	border-radius: 7px;
 }
 
-.content-item img{
+.content-item img {
 	display: flex;
 	width: 370px;
 	height: 439px;
@@ -56,46 +56,46 @@
 	border-top-right-radius: 20px;
 }
 
-.film-title{
+.film-title {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 22px;
-	color: #333333;
-	
+	color: #333;
+
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 15px;
 }
 
-.film-original-title{
+.film-original-title {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 14px;
-	color: #999999;
+	color: #999;
 
 	margin-top: 10px;
 	margin-left: 20px;
 }
 
-.film-border{
+.film-border {
 	margin: 15px 20px;
-	border-bottom: 2px solid #F2F2F2;
+	border-bottom: 2px solid #f2f2f2;
 }
 
-.film-description{
+.film-description {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
-	color: #333333;
+	color: #333;
 	height: 99px;
 
 	margin-right: 20px;
 	margin-left: 20px;
 }
 
-.film-time-container{
+.film-time-container {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -104,7 +104,7 @@
 	margin-bottom: 24px;
 }
 
-.container-time{
+.container-time {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -120,20 +120,20 @@
 	margin-right: 10px;
 }
 
-.time{
+.time {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 12px;
-	color: #CCCCCC;
+	color: #ccc;
 }
 
-.genre{
+.genre {
 	display: flex;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	text-transform: uppercase;
 	font-size: 10px;
-	color: #CCCCCC;
+	color: #ccc;
 	margin-right: 20px;
 }

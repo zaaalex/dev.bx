@@ -11,14 +11,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title><?= $title?></title>
-	<link rel="stylesheet" href = "/views/css/reset.css">
-	<link rel="stylesheet" href = "/views/css/style.css">
-	<link rel="stylesheet" href = "/views/css/index.css">
-	<link rel="stylesheet" href = "/views/css/film.css">
-	<link rel="stylesheet" href = "/views/css/addFilm.css">
-	<link rel="stylesheet" href = "/views/css/favorite.css">
-	<link rel="stylesheet" href = "/views/css/error.css">
+	<title><?= $title ?></title>
+	<link rel="stylesheet" href="/views/css/reset.css">
+	<link rel="stylesheet" href="/views/css/layout.css">
+	<link rel="stylesheet" href="/views/css/index.css">
+	<link rel="stylesheet" href="/views/css/film.css">
+	<link rel="stylesheet" href="/views/css/addFilm.css">
+	<link rel="stylesheet" href="/views/css/favorite.css">
+	<link rel="stylesheet" href="/views/css/error.css">
 </head>
 <body>
 
@@ -30,14 +30,14 @@
 		</a>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="/services/pages/index.php?genre=Главная" >ГЛАВНАЯ</a>
+				<a href="/services/pages/index.php?genre=Главная">ГЛАВНАЯ</a>
 			</li>
 
-			<?php foreach ($genres as $genre):?>
+			<?php foreach ($genres as $genre): ?>
 				<li class="menu-item">
-					<a href="/services/pages/index.php?genre=<?=$genre?>"><?=$genre?></a>
+					<a href="/services/pages/index.php?genre=<?= $genre ?>"><?= $genre ?></a>
 				</li>
-			<?php endforeach?>
+			<?php endforeach ?>
 
 			<li class="menu-item">
 				<a href="/services/pages/favorite.php">ИЗБРАННОЕ</a>
@@ -63,7 +63,7 @@
 			</form>
 
 		</div>
-		<?= $content?>
+		<?= $content ?>
 	</div>
 
 </div>

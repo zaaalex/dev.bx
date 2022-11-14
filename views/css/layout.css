@@ -2,13 +2,13 @@
 
 /*all on page - container*/
 
-.container{
+.container {
 	display: flex;
 	flex-direction: row;
 }
 
 /*sidebar*/
-.sidebar{
+.sidebar {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -18,7 +18,7 @@
 	position: fixed;
 }
 
-.logo{
+.logo {
 	display: flex;
 	width: 211px;
 	height: 68px;
@@ -29,7 +29,7 @@
 }
 
 /*menu*/
-.menu{
+.menu {
 	display: flex;
 	flex-direction: column;
 	margin: 30px;
@@ -44,8 +44,8 @@
 	border-bottom: 2px solid rgba(242, 242, 242, 0.1);
 }
 
-.menu-item a{
-	color: #B7B7B7;
+.menu-item a {
+	color: #b7b7b7;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	font-size: 18px;
@@ -60,24 +60,24 @@
 }
 
 .menu-item:last-child {
-	border-bottom:none;
+	border-bottom: none;
 }
 
 /*center part*/
-.wrapper{
+.wrapper {
 	display: flex;
 	flex-direction: column;
 
 	margin-left: 400px;
-	flex:1;
+	flex: 1;
 }
 
-.header{
+.header {
 	display: flex;
 	flex-direction: row;
 	height: 88px;
 	justify-content: space-around;
-	background: #FFFFFF;
+	background: #fff;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -89,27 +89,27 @@
 	margin-left: 43px;
 }
 
-.icon-and-search{
+.icon-and-search {
 	display: flex;
 	flex-direction: row;
 	margin-right: 15px;
 
-	border-bottom: 1px solid #C4C4C4;
+	border-bottom: 1px solid #c4c4c4;
 }
 
-.icon-and-search input{
+.icon-and-search input {
 	border: none;
-	outline:none;
+	outline: none;
 	width: 410px;
 }
 
 @media all and (max-width: 1366px) {
-	.icon-and-search input{
+	.icon-and-search input {
 		width: 410px;
 	}
 }
 
-.search{
+.search {
 	display: flex;
 	margin: 10px;
 	width: 18px;
@@ -120,36 +120,36 @@
 .search-film form {
 	display: flex;
 	margin-left: 15px;
-	color: #FFFFFF;
+	color: #fff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 }
 
-.add-film{
+.add-film {
 	display: flex;
 }
 
 .search-film button {
-	color: #FFFFFF;
+	color: #fff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	font-weight: 700;
 
 	width: 89px;
-	background: #E7A04E;
+	background: #e7a04e;
 	border-radius: 7px;
 	border: none;
 }
 
-.search-film button:hover{
+.search-film button:hover {
 	cursor: pointer;
-	background: #d99548;
+	background: #c28540;
 }
 
 
 .add-film button {
-	color: #FFFFFF;
+	color: #fff;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	font-weight: 700;
@@ -158,19 +158,19 @@
 	margin-left: 134px;
 	height: 40px;
 	width: 158px;
-	background: #4EE7B0;
+	background: #4ee7b0;
 	border-radius: 7px;
 	border: none;
 }
 
-.add-film button:hover{
+.add-film button:hover {
 	cursor: pointer;
 	background: #42be95;
 }
 
 @media all and (max-width: 1366px) {
 	.add-film button {
-		margin-left: 134px;
+		margin-left: 100px;
 	}
 }
 
@@ -179,7 +179,7 @@
 	margin-top: 4px;
 	display: flex;
 	flex: 1;
-	background: #CCCCCC;
+	background: #ccc;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;

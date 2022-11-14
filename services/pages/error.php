@@ -2,11 +2,11 @@
 require_once __DIR__ . '/../../boot.php';
 
 /**
- * @var array $genres;
+ * @var array $genres ;
  */
 
 echo view('layout', [
 	'content' => view('pages/error'),
 	'title' => "Ой, произошла ошибка",
-	'genres'=>$genres
+	'genres' => $genres,
 ]);

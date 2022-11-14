@@ -2,39 +2,39 @@
 require_once __DIR__ . '/../../boot.php';
 
 /**
- * @var array $movies;
- * @var array $genres;
+ * @var array $movies ;
+ * @var array $genres ;
  */
 
-
-if(!preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_POST['search']) &&
-	!preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_GET['genre']))
-{
-	header("Location: http://dev.bx/services/pages/error.php");
-	return new InvalidArgumentException("Invalid genre!");
-}
-
-$chooseMovies=[];
-if (!empty($_POST['search']))
-{
-	$chooseMovies=getFilmsByName($movies, $_POST['search']);
-}
-else
-{
-
-	$chooseMovies=getFilmsByGenre($movies, $_GET['genre']);
-}
-
-if (empty($chooseMovies))
+if (
+	!preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_POST['search'])
+	&& !preg_match('/^[A-Za-zА-Яа-я\s]+$/u', $_GET['genre'])
+)
 {
 	header("Location: /services/pages/error.php");
 	return new InvalidArgumentException("Invalid genre!");
 }
 
-echo view ('layout',[
+$chooseMovies = [];
+if (isset($_POST['search']))
+{
+	$chooseMovies = getFilmsByName($movies, $_POST['search']);
+}
+else
+{
+	$chooseMovies = getFilmsByGenre($movies, $_GET['genre']);
+}
+
+if (empty($chooseMovies))
+{
+	header("Location: /services/pages/error.php");
+	return new InvalidArgumentException("Movie not found!");
+}
+
+echo view('layout', [
 	'content' => view('pages/index', [
-		'movies'=>$chooseMovies,
+		'movies' => $chooseMovies,
 	]),
-	'title'=>$_GET['genre'],
-	'genres'=>$genres
+	'title' => $_GET['genre'],
+	'genres' => $genres,
 ]);
