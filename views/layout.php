@@ -25,17 +25,17 @@
 <div class="container">
 
 	<div class="sidebar">
-		<a href="/public/index.php?genre=Главная" class="logo">
+		<a href="/public/index.php" class="logo">
 			<img src="/data/image/logo.png" alt="">
 		</a>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="/public/index.php?genre=Главная"><?=option("HOME_PAGE") ?></a>
+				<a href="/public/index.php"><?=option("HOME_PAGE") ?></a>
 			</li>
 
-			<?php foreach ($genres as $genre): ?>
+			<?php foreach ($genres as $key => $genre): ?>
 				<li class="menu-item">
-					<a href="/public/index.php?genre=<?= $genre ?>"><?= $genre ?></a>
+					<a href="/public/index.php?genre=<?= $key ?>"><?= $genre ?></a>
 				</li>
 			<?php endforeach ?>
 

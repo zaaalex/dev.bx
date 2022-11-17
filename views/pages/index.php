@@ -21,7 +21,7 @@
 					<div class="time-image"></div>
 					<div class="time"><?= formatTimeInHourMinute($movie['duration']) ?></div>
 				</div>
-				<div class="genre"><?= implode(", ", $movie['genres']) ?></div>
+				<div class="genre"><?= decreaseDescription(implode(", ", $movie['genres']), 100) ?></div>
 			</div>
 		</div>
 	<?php endforeach; ?>
