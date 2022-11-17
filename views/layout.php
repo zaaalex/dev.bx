@@ -49,7 +49,7 @@
 		<div class="header">
 
 			<div class="search-film">
-				<form action="/public/index.php" method="post">
+				<form action="/public/index.php" method="get">
 					<div class="icon-and-search">
 						<div class="search"></div>
 						<input type=text name="search" placeholder="Поиск по каталогу..">

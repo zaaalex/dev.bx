@@ -19,14 +19,14 @@ if(isset($_GET['genre']))
 }
 else
 {
-	if(isset($_POST['search']))
+	if(isset($_GET['search']))
 	{
-		if (!preg_match('/^[A-Za-zА-Яа-я]+$/u', $_POST['search']))
+		if (!preg_match('/^[A-Za-zА-Яа-я]+$/u', $_GET['search']))
 		{
 			header("Location: /public/error.php");
 			throw new InvalidArgumentException("Invalid genre!");
 		}
-		$chooseMovies = getFilmsByName($movies, $_POST['search']);
+		$chooseMovies = getFilmsByName($movies, $_GET['search']);
 	}
 	else
 	{
