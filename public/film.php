@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../boot.php';
+require_once __DIR__ . "/../boot.php";
 
 /**
  * @var array $movies ;
@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../boot.php';
 
 if (!preg_match('/^\d+$/', $_GET['id']) || getFilmById($movies, (int)$_GET['id']) === null)
 {
-	header("Location: /services/pages/error.php");
+	header("Location: /public/error.php");
 	return new InvalidArgumentException("Invalid film id!");
 }
 

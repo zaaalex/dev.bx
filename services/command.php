@@ -24,7 +24,7 @@ function formatTimeInHourMinute(int $minute): string
 {
 	if ($minute < 0)
 	{
-		header("Location: /services/pages/error.php");
+		header("Location: /public/error.php");
 		throw new RuntimeException("Invalid time! Minute must be>=0");
 	}
 

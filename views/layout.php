@@ -25,22 +25,22 @@
 <div class="container">
 
 	<div class="sidebar">
-		<a href="/services/pages/index.php?genre=Главная" class="logo">
+		<a href="/public/index.php?genre=Главная" class="logo">
 			<img src="/data/image/logo.png" alt="">
 		</a>
 		<ul class="menu">
 			<li class="menu-item">
-				<a href="/services/pages/index.php?genre=Главная"><?=option("HOME_PAGE") ?></a>
+				<a href="/public/index.php?genre=Главная"><?=option("HOME_PAGE") ?></a>
 			</li>
 
 			<?php foreach ($genres as $genre): ?>
 				<li class="menu-item">
-					<a href="/services/pages/index.php?genre=<?= $genre ?>"><?= $genre ?></a>
+					<a href="/public/index.php?genre=<?= $genre ?>"><?= $genre ?></a>
 				</li>
 			<?php endforeach ?>
 
 			<li class="menu-item">
-				<a href="/services/pages/favorite.php"><?=option("FAVORITES_PAGE") ?></a>
+				<a href="/public/favorite.php"><?=option("FAVORITES_PAGE") ?></a>
 			</li>
 		</ul>
 	</div>
@@ -49,7 +49,7 @@
 		<div class="header">
 
 			<div class="search-film">
-				<form action="/services/pages/index.php" method="post">
+				<form action="/public/index.php" method="post">
 					<div class="icon-and-search">
 						<div class="search"></div>
 						<input type=text name="search" placeholder="Поиск по каталогу..">
@@ -58,7 +58,7 @@
 				</form>
 			</div>
 
-			<form action="/services/pages/addFilm.php" class="add-film">
+			<form action="/public/addFilm.php" class="add-film">
 				<button type="submit"><?=option("ADD_FILM") ?></button>
 			</form>
 

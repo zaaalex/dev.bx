@@ -8,7 +8,7 @@
 	<?php foreach ($movies as $movie): ?>
 		<div class="content-item">
 			<div class="film-overlay">
-				<a href="http://dev.bx/services/pages/film.php?id=<?= $movie['id'] ?>">ПОДРОБНЕЕ</a>
+				<a href="/public/film.php?id=<?= $movie['id'] ?>">ПОДРОБНЕЕ</a>
 			</div>
 			<img src="<?= createImagePathByFilmId($movie['id']) ?>">
 			<div class="film-title"><?= getFilmTitleWithYear($movie) ?></div>
