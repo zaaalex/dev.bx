@@ -9,7 +9,7 @@ require_once __DIR__ . "/../boot.php";
 
 $chooseMovies = [];
 $title = $config["HOME_PAGE"];
-if(isset($_GET['genre']))
+if (isset($_GET['genre']))
 {
 	if (!preg_match('/^[A-Za-zА-Яа-я-]+$/u', $_GET['genre']))
 	{
@@ -18,11 +18,11 @@ if(isset($_GET['genre']))
 	}
 
 	$chooseMovies = getFilmsByGenre($movies, $_GET['genre']);
-	$title=genreToRu($_GET['genre']);
+	$title = genreToRu($_GET['genre']);
 }
 else
 {
-	if(isset($_GET['search']))
+	if (isset($_GET['search']))
 	{
 		if (!preg_match('/^[A-Za-zА-Яа-я-]+$/u', $_GET['search']))
 		{
@@ -47,6 +47,9 @@ if (empty($chooseMovies))
 echo view('layout', [
 	'content' => view('pages/index', [
 		'movies' => $chooseMovies,
+	]),
+	'menu' => view('pages/menu', [
+		'genres' => $genres,
 	]),
 	'title' => $title,
 	'genres' => $genres,

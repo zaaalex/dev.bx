@@ -1,8 +1,8 @@
 <?php
 /**
  * @var string $content
+ * @var string $menu
  * @var string $title
- * @var array $genres
  */
 ?>
 
@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="/views/css/add-film.css">
 	<link rel="stylesheet" href="/views/css/favorite.css">
 	<link rel="stylesheet" href="/views/css/error.css">
+	<link rel="stylesheet" href="/views/css/menu.css">
 </head>
 <body>
 
@@ -28,21 +29,9 @@
 		<a href="/public/index.php" class="logo">
 			<img src="/data/image/logo.png" alt="">
 		</a>
-		<ul class="menu">
-			<li class="menu-item">
-				<a href="/public/index.php"><?=option("HOME_PAGE") ?></a>
-			</li>
 
-			<?php foreach ($genres as $key => $genre): ?>
-				<li class="menu-item">
-					<a href="/public/index.php?genre=<?= $key ?>"><?= $genre ?></a>
-				</li>
-			<?php endforeach ?>
+		<?=$menu?>
 
-			<li class="menu-item">
-				<a href="/public/favorite.php"><?=option("FAVORITES_PAGE") ?></a>
-			</li>
-		</ul>
 	</div>
 
 	<div class="wrapper">
