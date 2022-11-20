@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="/views/css/layout.css">
 	<link rel="stylesheet" href="/views/css/index.css">
 	<link rel="stylesheet" href="/views/css/film.css">
-	<link rel="stylesheet" href="/views/css/addFilm.css">
+	<link rel="stylesheet" href="/views/css/add-film.css">
 	<link rel="stylesheet" href="/views/css/favorite.css">
 	<link rel="stylesheet" href="/views/css/error.css">
 </head>
@@ -58,7 +58,7 @@
 				</form>
 			</div>
 
-			<form action="/public/addFilm.php" class="add-film">
+			<form action="/public/add-film.php" class="add-film">
 				<button type="submit"><?=option("ADD_FILM") ?></button>
 			</form>
 
