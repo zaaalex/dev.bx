@@ -22,7 +22,7 @@ function getFilmById(int $id): ?array
 
 	if (!$result)
 	{
-		return null;
+		throw new RuntimeException(mysqli_errno($connection) . ': ' . mysqli_error($connection));
 	}
 
 	return mysqli_fetch_assoc($result);
@@ -40,7 +40,7 @@ function getGenres(): array
 	if (!$result)
 	{
 		header("Location: /public/error.php");
-		throw new RuntimeException(mysqli_error($connection));
+		throw new RuntimeException(mysqli_errno($connection).': '.mysqli_error($connection));
 	}
 
 	while ($row = mysqli_fetch_assoc($result))
@@ -76,7 +76,7 @@ GROUP BY m.ID
 
 	if (!$result)
 	{
-		return $movies;
+		throw new RuntimeException(mysqli_errno($connection).': '.mysqli_error($connection));
 	}
 
 	while ($row = mysqli_fetch_assoc($result))
