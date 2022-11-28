@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__."/../boot.php";
 
-function getDatabaseConnection(): ?mysqli
+function getDatabaseConnection(): mysqli
 {
 	$dbHost=getConfigurationOption("DB_HOST");
 	$dbUser=getConfigurationOption("DB_USER");

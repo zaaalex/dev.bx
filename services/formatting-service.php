@@ -61,9 +61,11 @@ function getFilmTitleWithYear($movie, $lengthTitle = 38): string
  * Приводит название жанра на русском, если такой присутствует в массиве данных $genres.
  * Иначе возвращает исключение
  */
-function ConvertGenreToRu($genre):string
+function ConvertGenreToRu(string $genre):string
 {
 	$connection = getDatabaseConnection();
+	$genre = mysqli_real_escape_string($connection, $genre);
+
 	$result=$connection->query("
 					SELECT NAME FROM genre g
 					WHERE g.CODE='${genre}'
