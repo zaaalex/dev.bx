@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__."/../boot.php";
+include_once __DIR__ . "/../boot.php";
 
 /*
  * Дополняет переданный $path до абсолютного и отображает страничку с $variables массивом значений
@@ -41,9 +41,9 @@ function getConfigurationOption(string $name, string $defaultValue = null)
 	 */
 	require ROOT . "/config.php";
 
-	file_exists(ROOT . "/local-config.php") ? require ROOT . '/local-config.php' : $localConfig=[];
+	file_exists(ROOT . "/local-config.php") ? require ROOT . '/local-config.php' : $localConfig = [];
 
-	$config=array_merge($config, $localConfig);
+	$config = array_merge($config, $localConfig);
 
 	if (array_key_exists($name, $config))
 	{

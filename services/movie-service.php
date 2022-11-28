@@ -6,9 +6,9 @@
  */
 function getFilmById(int $id): ?array
 {
-	$connection=getDatabaseConnection();
+	$connection = getDatabaseConnection();
 
-	$result=mysqli_query($connection, "
+	$result = mysqli_query($connection, "
 		SELECT m.ID, m.TITLE, m.ORIGINAL_TITLE, m.DESCRIPTION,
         m.DURATION, m.AGE_RESTRICTION, m.RELEASE_DATE, m.RATING,
         group_concat(CONCAT(' ',a.NAME)) as CAST, d.NAME as DIRECTOR 
@@ -30,22 +30,22 @@ function getFilmById(int $id): ?array
 
 function getGenres(): array
 {
-	$genres=[];
-	$connection=getDatabaseConnection();
+	$genres = [];
+	$connection = getDatabaseConnection();
 
-	$result=mysqli_query($connection, "
+	$result = mysqli_query($connection, "
 		SELECT CODE, NAME from genre
 	");
 
 	if (!$result)
 	{
 		header("Location: /public/error.php");
-		throw new RuntimeException(mysqli_errno($connection).': '.mysqli_error($connection));
+		throw new RuntimeException(mysqli_errno($connection) . ': ' . mysqli_error($connection));
 	}
 
 	while ($row = mysqli_fetch_assoc($result))
 	{
-		$genres[$row['CODE']]=$row['NAME'];
+		$genres[$row['CODE']] = $row['NAME'];
 	}
 
 	return $genres;
@@ -53,8 +53,8 @@ function getGenres(): array
 
 function getMovies(): array
 {
-	$movies=[];
-	$connection=getDatabaseConnection();
+	$movies = [];
+	$connection = getDatabaseConnection();
 
 	$result = mysqli_query($connection, "
 		SELECT m.ID, m.TITLE, m.ORIGINAL_TITLE, m.DESCRIPTION,
@@ -76,12 +76,12 @@ GROUP BY m.ID
 
 	if (!$result)
 	{
-		throw new RuntimeException(mysqli_errno($connection).': '.mysqli_error($connection));
+		throw new RuntimeException(mysqli_errno($connection) . ': ' . mysqli_error($connection));
 	}
 
 	while ($row = mysqli_fetch_assoc($result))
 	{
-		$movies[]=$row;
+		$movies[] = $row;
 	}
 
 	return $movies;
@@ -96,7 +96,7 @@ function getFilmsByGenre(array $movies, string $genre): ?array
 	$chooseMovies = [];
 	foreach ($movies as $movie)
 	{
-		if (strpos($movie['GENRES'], ConvertGenreToRu($genre))!==false)
+		if (strpos($movie['GENRES'], ConvertGenreToRu($genre)) !== false)
 		{
 			$chooseMovies[] = $movie;
 		}
