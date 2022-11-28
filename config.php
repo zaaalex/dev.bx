@@ -5,5 +5,9 @@ $config = [
 	"FAVORITES_PAGE" => "Избранное",
 	"ADD_FILM" => "ДОБАВИТЬ ФИЛЬМ",
 	"SEARCH" => "ИСКАТЬ",
-	"SEARCH_FILM"=>"Поиск",
+	"SEARCH_FILM_PAGE"=>"Поиск",
+	"DB_HOST" => '',
+	"DB_USER" => '',
+	"DB_PASSWORD" => '',
+	"DB_NAME" => '',
 ];

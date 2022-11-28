@@ -6,7 +6,7 @@
 
 <ul class="menu">
 	<li class="menu-item">
-		<a href="/public/index.php"><?= option("HOME_PAGE") ?></a>
+		<a href="/public/index.php"><?= getConfigurationOption("HOME_PAGE") ?></a>
 	</li>
 
 	<?php
@@ -18,6 +18,6 @@
 	endforeach ?>
 
 	<li class="menu-item">
-		<a href="/public/favorite.php"><?= option("FAVORITES_PAGE") ?></a>
+		<a href="/public/favorite.php"><?= getConfigurationOption("FAVORITES_PAGE") ?></a>
 	</li>
 </ul>

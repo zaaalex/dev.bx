@@ -2,13 +2,13 @@
 require_once __DIR__ . "/../boot.php";
 
 /**
- * @var array $movies ;
- * @var array $genres ;
  * @var array $config ;
  */
 
 $chooseMovies = [];
+$movies = getMovies();
 $title = $config["HOME_PAGE"];
+
 if (isset($_GET['genre']))
 {
 	if (!preg_match('/^[A-Za-zА-Яа-я-]+$/u', $_GET['genre']))
@@ -18,7 +18,7 @@ if (isset($_GET['genre']))
 	}
 
 	$chooseMovies = getFilmsByGenre($movies, $_GET['genre']);
-	$title = genreToRu($_GET['genre']);
+	$title = ConvertGenreToRu($_GET['genre']);
 }
 else
 {
@@ -30,7 +30,7 @@ else
 			throw new InvalidArgumentException("[public/index.php] Invalid search text!");
 		}
 		$chooseMovies = getFilmsByName($movies, $_GET['search']);
-		$title = $config["SEARCH_FILM"];
+		$title = $config["SEARCH_FILM_PAGE"];
 	}
 	else
 	{
@@ -49,8 +49,7 @@ echo view('layout', [
 		'movies' => $chooseMovies,
 	]),
 	'menu' => view('pages/menu', [
-		'genres' => $genres,
+		'genres' => getGenres(),
 	]),
 	'title' => $title,
-	'genres' => $genres,
 ]);

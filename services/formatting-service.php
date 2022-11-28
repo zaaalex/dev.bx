@@ -51,27 +51,30 @@ function convertToLowerCase(string $str): string
  */
 function getFilmTitleWithYear($movie, $lengthTitle = 38): string
 {
-	return decreaseDescription($movie['title'], $lengthTitle)
+	return decreaseDescription($movie['TITLE'], $lengthTitle)
 		. " ("
-		. $movie['release-date']
+		. $movie['RELEASE_DATE']
 		. ")";
 }
+
 /*
  * Приводит название жанра на русском, если такой присутствует в массиве данных $genres.
  * Иначе возвращает исключение
  */
-
-function genreToRu($genre):string
+function ConvertGenreToRu($genre):string
 {
-	/**
-	 * @var array $genres ;
-	 */
-	require ROOT."/data/genres.php";
+	$connection = getDatabaseConnection();
+	$result=$connection->query("
+					SELECT NAME FROM genre g
+					WHERE g.CODE='${genre}'
+					");
 
-	if (array_key_exists($genre, $genres))
+	$genreToRu=mysqli_fetch_assoc($result)['NAME'];
+	if (!$result || is_null($genreToRu))
 	{
-		return $genres[$genre];
+		header("Location: /public/error.php");
+		throw new InvalidArgumentException("[genreToRu]: Invalid genre");
 	}
 
-	throw new InvalidArgumentException("[genreToRu]: Invalid genre");
+	return $genreToRu;
 }

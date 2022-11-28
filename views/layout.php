@@ -43,12 +43,12 @@
 						<div class="search"></div>
 						<input type=text name="search" placeholder="Поиск по каталогу..">
 					</div>
-					<button type="submit"><?=option("SEARCH") ?></button>
+					<button type="submit"><?= getConfigurationOption("SEARCH") ?></button>
 				</form>
 			</div>
 
 			<form action="/public/add-film.php" class="add-film">
-				<button type="submit"><?=option("ADD_FILM") ?></button>
+				<button type="submit"><?= getConfigurationOption("ADD_FILM") ?></button>
 			</form>
 
 		</div>

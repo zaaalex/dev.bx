@@ -30,18 +30,20 @@ function view(string $path, array $variables = []): string
  */
 function createImagePathByFilmId(int $id): string
 {
-	return "/data/filmImage/$id.jpg";
+	return "/data/film-image/$id.jpg";
 }
 
-/*
- * Взаимодействие с файлом конфигурации - config.php
- */
-function option(string $name, string $defaultValue = null)
+function getConfigurationOption(string $name, string $defaultValue = null)
 {
 	/**
 	 * @var array $config ;
+	 * @var array $localConfig ;
 	 */
-	require ROOT."/services/config.php";
+	require ROOT . "/config.php";
+
+	file_exists(ROOT . "/local-config.php") ? require ROOT . '/local-config.php' : $localConfig=[];
+
+	$config=array_merge($config, $localConfig);
 
 	if (array_key_exists($name, $config))
 	{
