@@ -13,6 +13,10 @@
 	border-bottom: 2px solid rgba(242, 242, 242, 0.1);
 }
 
+.menu-item-active{
+	background: rgba(255, 255, 255, 0.05);
+}
+
 .menu-item a {
 	color: #b7b7b7;
 	font-family: 'Open Sans', sans-serif;
