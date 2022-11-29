@@ -1,3 +1,3 @@
 <?php
 
-header("Location: /public/movie-item.php");
+header("Location: /public/index.php");
