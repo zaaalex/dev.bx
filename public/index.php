@@ -45,10 +45,10 @@ if (empty($chooseMovies))
 }
 
 echo view('layout', [
-	'content' => view('pages/index', [
+	'content' => view('components/movie-item', [
 		'movies' => $chooseMovies,
 	]),
-	'menu' => view('pages/menu', [
+	'menu' => view('components/menu', [
 		'genres' => getGenres(),
 	]),
 	'title' => $title,

@@ -20,7 +20,7 @@ echo view('layout', [
 	'content' => view('pages/film', [
 		'movie' => $movie,
 	]),
-	'menu' => view('pages/menu', [
+	'menu' => view('components/menu', [
 		'genres' => getGenres(),
 	]),
 	'title' => $movie['TITLE'],
