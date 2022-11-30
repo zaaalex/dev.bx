@@ -6,7 +6,6 @@ require_once __DIR__ . "/../boot.php";
  */
 
 $chooseMovies = [];
-$movies = getMovies();
 $title = $config["HOME_PAGE"];
 
 if (isset($_GET['genre']))
@@ -17,7 +16,7 @@ if (isset($_GET['genre']))
 		throw new InvalidArgumentException("[public/index.php] Invalid genre!");
 	}
 
-	$chooseMovies = getFilmsByGenre($movies, $_GET['genre']);
+	$chooseMovies = getMoviesByGenre($_GET['genre']);
 	$title = ConvertGenreToRu($_GET['genre']);
 }
 else
@@ -29,12 +28,12 @@ else
 			header("Location: /public/error.php");
 			throw new InvalidArgumentException("[public/index.php] Invalid search text!");
 		}
-		$chooseMovies = getFilmsByName($movies, $_GET['search']);
+		$chooseMovies = getMoviesByName($_GET['search']);
 		$title = $config["SEARCH_FILM_PAGE"];
 	}
 	else
 	{
-		$chooseMovies = $movies;
+		$chooseMovies = getMovies();
 	}
 }
 
