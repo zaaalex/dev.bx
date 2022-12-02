@@ -16,7 +16,7 @@ if (isset($_GET['genre']))
 		throw new InvalidArgumentException("[public/index.php] Invalid genre!");
 	}
 
-	$chooseMovies = getMoviesByGenre($_GET['genre']);
+	$chooseMovies = getMovies($_GET['genre']);
 	$title = ConvertGenreToRu($_GET['genre']);
 }
 else
@@ -28,7 +28,7 @@ else
 			header("Location: /public/error.php");
 			throw new InvalidArgumentException("[public/index.php] Invalid search text!");
 		}
-		$chooseMovies = getMoviesByName($_GET['search']);
+		$chooseMovies = getMovies(null, $_GET['search']);
 		$title = $config["SEARCH_FILM_PAGE"];
 	}
 	else

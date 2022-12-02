@@ -39,11 +39,16 @@ function getConfigurationOption(string $name, string $defaultValue = null)
 	 * @var array $config ;
 	 * @var array $localConfig ;
 	 */
-	require ROOT . "/config.php";
+	static $config = null;
 
-	file_exists(ROOT . "/local-config.php") ? require ROOT . '/local-config.php' : $localConfig = [];
+	if ($config === null)
+	{
+		require ROOT . "/config.php";
 
-	$config = array_merge($config, $localConfig);
+		file_exists(ROOT . "/local-config.php") ? require ROOT . '/local-config.php' : $localConfig = [];
+
+		$config = array_merge($config, $localConfig);
+	}
 
 	if (array_key_exists($name, $config))
 	{
