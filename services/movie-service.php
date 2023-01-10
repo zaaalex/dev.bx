@@ -2,7 +2,7 @@
 
 function getQueryMovieIdByGenre(mysqli $connection, string $codeGenre): string
 {
-	mysqli_real_escape_string($connection, $codeGenre);
+	$codeGenre=mysqli_real_escape_string($connection, $codeGenre);
 
 	return "m.id in (SELECT m2.ID as ID FROM movie m2
 						JOIN movie_genre mg on m2.ID = mg.MOVIE_ID
@@ -13,7 +13,7 @@ function getQueryMovieIdByGenre(mysqli $connection, string $codeGenre): string
 
 function getQueryMovieByTitle(mysqli $connection, string $movieTitle): string
 {
-	mysqli_real_escape_string($connection, $movieTitle);
+	$movieTitle=mysqli_real_escape_string($connection, $movieTitle);
 
 	return "(m.TITLE LIKE '%$movieTitle%'|| m.ORIGINAL_TITLE LIKE '$movieTitle%')";
 }
